@@ -1,0 +1,18 @@
+﻿services:
+#  archivingpresentation:
+#    image: archivingpresentation
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+      
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=archive
+      - POSTGRES_USER=archive
+      - POSTGRES_DB=archive
+    volumes:
+      - /var/lib/postgresql/data
+    ports:
+      - 5432:5432
